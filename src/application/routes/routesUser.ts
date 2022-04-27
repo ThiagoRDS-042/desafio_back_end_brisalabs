@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { createUserControllerFactory } from "../factories/createUserControllerFactory";
+import { createUserControllerFactory } from "../factories/createUserController";
 
 export const routerUser = Router();
 
-routerUser.post("/user", (req, res) => {
+routerUser.post("/api/v1/users", (req, res) => {
   return createUserControllerFactory().execute(req, res);
 });

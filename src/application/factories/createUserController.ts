@@ -1,5 +1,5 @@
-import { UsersRepository } from "../../infra/repositories/UsersRepository";
-import { CreateUserController } from "../controllers/UserController";
+import { UsersRepository } from "../../infra/repositories/usersRepository";
+import { CreateUserController } from "../controllers/userController";
 import { CreateUserUseCase } from "../usecases/createUserUseCase";
 
 export const createUserControllerFactory = () => {

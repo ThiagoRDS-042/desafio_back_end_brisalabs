@@ -12,7 +12,7 @@ app.use(cors());
 
 app.use(express.json());
 
-app.use(routes.routerUser);
+app.use(routes.routerUser, routes.routerPixKey);
 
 app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
   if (error instanceof AppError) {

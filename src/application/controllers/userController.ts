@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { StatusCode } from "../../responses";
 import { CreateUserUseCase } from "../usecases/createUserUseCase";
 
-class CreateUserController {
+export class CreateUserController {
   constructor(private createUser: CreateUserUseCase) {}
 
   async execute(request: Request, response: Response) {
@@ -13,5 +13,3 @@ class CreateUserController {
     return response.status(StatusCode.CREATED).json(user);
   }
 }
-
-export { CreateUserController };
