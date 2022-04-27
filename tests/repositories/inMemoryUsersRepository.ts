@@ -15,4 +15,10 @@ export class InMemoryUsersRepository implements IUsersRepository {
 
     return !!userAlreadyExists;
   }
+
+  async findByID(user_id: string): Promise<User | null> {
+    const user = this.users.find((user) => user.id === user_id);
+
+    return user || null;
+  }
 }

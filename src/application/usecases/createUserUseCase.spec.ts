@@ -19,7 +19,7 @@ describe("Create user use case", () => {
     expect(user.id).not.toBeNull();
   });
 
-  it("should not be able to create a user whit a existing email", async () => {
+  it("should not be able to create a new user with a existing email", async () => {
     const createUserUseCase = createUserUseCaseFactory();
 
     const userData: CreateUserRequest = {

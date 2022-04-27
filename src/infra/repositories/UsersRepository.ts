@@ -14,4 +14,10 @@ export class UsersRepository implements IUsersRepository {
 
     return newUser;
   }
+
+  async findByID(user_id: string): Promise<User | null> {
+    const user = getRepository(User).findOne({ where: { id: user_id } });
+
+    return user || null;
+  }
 }

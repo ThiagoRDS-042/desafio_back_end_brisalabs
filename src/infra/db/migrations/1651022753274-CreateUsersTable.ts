@@ -24,11 +24,6 @@ export class CreateUsersTable1651022753274 implements MigrationInterface {
             name: "phone",
             type: "varchar(20)",
           },
-          {
-            name: "created_at",
-            type: "timestamp",
-            default: "CURRENT_TIMESTAMP",
-          },
         ],
       })
     );

@@ -1,9 +1,4 @@
-import {
-  Column,
-  CreateDateColumn,
-  Entity,
-  PrimaryGeneratedColumn,
-} from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 import { v4 as uuid } from "uuid";
 import { AppError } from "../../error/appError";
 import { Message, StatusCode } from "../../responses";
@@ -13,7 +8,6 @@ export type UserProps = {
   email: string;
   name: string;
   phone: string;
-  createdAt?: Date;
 };
 
 @Entity({
@@ -21,7 +15,7 @@ export type UserProps = {
 })
 export class User {
   @PrimaryGeneratedColumn("uuid")
-  id?: string;
+  id: string;
 
   @Column()
   email: string;
@@ -32,18 +26,11 @@ export class User {
   @Column()
   phone: string;
 
-  @CreateDateColumn({ type: "timestamp", name: "created_at" })
-  createdAt?: Date;
-
   private constructor(user: UserProps) {
     Object.assign(this, user);
   }
 
   static create(user: UserProps) {
-    if (!user.createdAt) {
-      user.createdAt = new Date();
-    }
-
     if (!user.id) {
       user.id = uuid();
     }
@@ -52,12 +39,12 @@ export class User {
 
     newUser.isValid();
 
-    return user;
+    return newUser;
   }
 
   private isValid() {
     const validEmail = /^.{3,}@.{3,}[\.][a-z]{2,}$/;
-    const validPhone = /^[+]\d{2}\s\(\d{2}\)\s\d[.]\d{4}[-]\d{4}$/;
+    const validPhone = /^(\+\d{2}\s)?(\(\d{2}\)\s)?(9\.|9)?\d{4}[-]?\d{4}$/;
 
     if (this.name.length > 100 || this.name.length <= 0) {
       throw new AppError(

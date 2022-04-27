@@ -16,7 +16,7 @@ describe("Create user", () => {
     expect(user.id).not.toBeNull();
   });
 
-  it("should not be able to create a user with a name longer than 100 characters", () => {
+  it("should not be able to create a new user with a name longer than 100 characters", () => {
     const userData: UserProps = {
       name: "test username whit longer than 100 characters test username whit longer than 100 characters test username whit longer than 100 characters test username whit longer than 100 characters test username whit longer than 100 characters ",
       email: "test@test.com",
@@ -32,7 +32,7 @@ describe("Create user", () => {
     }
   });
 
-  it("should not be able to create a user with a empty name", () => {
+  it("should not be able to create a new user with a empty name", () => {
     const userData: UserProps = {
       name: "",
       email: "test@test.com",
@@ -48,7 +48,7 @@ describe("Create user", () => {
     }
   });
 
-  it("should not be able to create a user with a email longer than 100 characters", () => {
+  it("should not be able to create a new user with a email longer than 100 characters", () => {
     const userData: UserProps = {
       name: "test username",
       email:
@@ -68,7 +68,7 @@ describe("Create user", () => {
     }
   });
 
-  it("should not be able to create a user with a invalid email", () => {
+  it("should not be able to create a new user with a invalid email", () => {
     const userData: UserProps = {
       name: "test username",
       email: "test@",
@@ -87,7 +87,7 @@ describe("Create user", () => {
     }
   });
 
-  it("should not be able to create a user with a empty email", () => {
+  it("should not be able to create a new user with a empty email", () => {
     const userData: UserProps = {
       name: "test username",
       email: "",
@@ -106,7 +106,7 @@ describe("Create user", () => {
     }
   });
 
-  it("should not be able to create a user with a invalid phone", () => {
+  it("should not be able to create a new user with a invalid phone", () => {
     const userData: UserProps = {
       name: "test username",
       email: "test@tes.com.br",
@@ -122,7 +122,7 @@ describe("Create user", () => {
     }
   });
 
-  it("should not be able to create a user with a empty phone", () => {
+  it("should not be able to create a new user with a empty phone", () => {
     const userData: UserProps = {
       name: "test username",
       email: "test@tes.com.br",
