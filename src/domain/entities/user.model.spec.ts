@@ -1,6 +1,6 @@
 import { AppError } from "../../error/appError";
 import { Message, StatusCode } from "../../responses";
-import { User, UserProps } from "./user";
+import { User, UserProps } from "./user.model";
 
 describe("Create user", () => {
   it("should be able to create a new user", () => {

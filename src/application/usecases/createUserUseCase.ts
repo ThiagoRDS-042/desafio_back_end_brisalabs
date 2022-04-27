@@ -1,4 +1,4 @@
-import { User } from "../../domain/entities/user";
+import { User } from "../../domain/entities/user.model";
 import { AppError } from "../../error/appError";
 import { Message, StatusCode } from "../../responses";
 import { IUsersRepository } from "../repositories/IUsersRepository";
@@ -9,7 +9,7 @@ export type CreateUserRequest = {
   phone: string;
 };
 
-export class CreateUser {
+export class CreateUserUseCase {
   constructor(private UsersRepository: IUsersRepository) {}
 
   async execute({ name, email, phone }: CreateUserRequest) {

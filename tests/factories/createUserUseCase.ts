@@ -1,9 +1,9 @@
-import { CreateUser } from "../../src/application/usecases/createUserUseCase";
+import { CreateUserUseCase } from "../../src/application/usecases/createUserUseCase";
 import { InMemoryUsersRepository } from "../repositories/inMemoryUsersRepository";
 
 export const createUserUseCaseFactory = () => {
   const usersRepository = new InMemoryUsersRepository();
-  const createUserUseCase = new CreateUser(usersRepository);
+  const createUserUseCase = new CreateUserUseCase(usersRepository);
 
   return createUserUseCase;
 };

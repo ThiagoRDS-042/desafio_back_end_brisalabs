@@ -1,6 +1,6 @@
-import { User } from "../../domain/entities/user";
+import { User, UserProps } from "../../domain/entities/user.model";
 
 export interface IUsersRepository {
   userAlreadyExists(email: string): Promise<boolean>;
-  create(user: User): Promise<User>;
+  create(user: UserProps): Promise<User>;
 }

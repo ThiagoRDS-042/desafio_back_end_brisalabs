@@ -1,5 +1,5 @@
 import { IUsersRepository } from "../../src/application/repositories/IUsersRepository";
-import { User } from "../../src/domain/entities/user";
+import { User } from "../../src/domain/entities/user.model";
 
 export class InMemoryUsersRepository implements IUsersRepository {
   public users: User[] = [];
@@ -11,9 +11,7 @@ export class InMemoryUsersRepository implements IUsersRepository {
   }
 
   async userAlreadyExists(email: string): Promise<boolean> {
-    const userAlreadyExists = this.users.find(
-      (user) => user.props.email === email
-    );
+    const userAlreadyExists = this.users.find((user) => user.email === email);
 
     return !!userAlreadyExists;
   }

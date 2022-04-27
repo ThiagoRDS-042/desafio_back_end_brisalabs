@@ -1,4 +1,4 @@
-import { createUserUseCaseFactory } from "../../../tests/factories/CreateUserUseCase";
+import { createUserUseCaseFactory } from "../../../tests/factories/createUserUseCase";
 import { AppError } from "../../error/appError";
 import { Message, StatusCode } from "../../responses";
 import { CreateUserRequest } from "./createUserUseCase";
