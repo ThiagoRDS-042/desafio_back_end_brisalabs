@@ -36,6 +36,8 @@ export class CreatePixKeysTable1651055633228 implements MigrationInterface {
         columnNames: ["user_id"],
         referencedColumnNames: ["id"],
         referencedTableName: "users",
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE",
       })
     );
   }

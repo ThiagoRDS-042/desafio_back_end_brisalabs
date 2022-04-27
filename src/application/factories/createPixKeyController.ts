@@ -1,6 +1,6 @@
 import { PixKeysRepository } from "../../infra/repositories/pixKeysRepository";
 import { UsersRepository } from "../../infra/repositories/usersRepository";
-import { CreatePixKeyController } from "../controllers/pixKeyController";
+import { CreatePixKeyController } from "../controllers/createPixKeyController";
 import { CreatePixKeyUseCase } from "../usecases/createPixKeyUseCase";
 
 export const createPixKeyControllerFactory = () => {

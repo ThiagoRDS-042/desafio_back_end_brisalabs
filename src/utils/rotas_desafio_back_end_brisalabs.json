@@ -1,13 +1,90 @@
 {
   "_type": "export",
   "__export_format": 4,
-  "__export_date": "2022-04-27T10:44:09.252Z",
+  "__export_date": "2022-04-27T16:13:54.933Z",
   "__export_source": "insomnia.desktop.app:v2022.2.1",
   "resources": [
     {
+      "_id": "req_96790ab97a6345dcac5ccb10a8269067",
+      "parentId": "fld_a2f0c4170f85489db3c260006d9061ce",
+      "modified": 1651075179640,
+      "created": 1651073533695,
+      "url": "{{ _.baseUrl }}/transactions/ab4c5bf4-9697-4da9-8d03-c078fd37d5a8",
+      "name": "FindByUserId",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1651073533695,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_a2f0c4170f85489db3c260006d9061ce",
+      "parentId": "wrk_1cf5ffab80944731bbcfc968e28d0be8",
+      "modified": 1651073472633,
+      "created": 1651073472633,
+      "name": "Transactions",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1651073472633,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_1cf5ffab80944731bbcfc968e28d0be8",
+      "parentId": null,
+      "modified": 1651033647362,
+      "created": 1651033647362,
+      "name": "desafio_back_end_brisalabs",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_52aa78337449408ebcc1cafda6fb9245",
+      "parentId": "fld_a2f0c4170f85489db3c260006d9061ce",
+      "modified": 1651075979822,
+      "created": 1651073479983,
+      "url": "{{ _.baseUrl }}/transactions",
+      "name": "Create",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"amount\": 100,\n\t\"pixKey_key_from\": \"1245-7893\",\n\t\"pixKey_key_to\": \"109.876.543-21\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_e53953e6edaf427cbf10228eef53e6c7"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1651073479983,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
       "_id": "req_a1f45eac5e2c483489579d89b0322a84",
       "parentId": "fld_328afa357557428f90ce8b749d2e8ada",
-      "modified": 1651056046643,
+      "modified": 1651073645451,
       "created": 1651055873900,
       "url": "{{ _.baseUrl }}/pixKeys",
       "name": "Create",
@@ -15,7 +92,7 @@
       "method": "POST",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n\t\"key\": \"1245-7893\",\n\t\"user_id\": \"63b32b5f-6b4a-4efe-ab08-0c4de9d9395e\"\n}"
+        "text": "{\n\t\"key\": \"test@test.com.br\",\n\t\"user_id\": \"ab4c5bf4-9697-4da9-8d03-c078fd37d5a8\"\n}"
       },
       "parameters": [],
       "headers": [
@@ -49,19 +126,9 @@
       "_type": "request_group"
     },
     {
-      "_id": "wrk_1cf5ffab80944731bbcfc968e28d0be8",
-      "parentId": null,
-      "modified": 1651033647362,
-      "created": 1651033647362,
-      "name": "desafio_back_end_brisalabs",
-      "description": "",
-      "scope": "collection",
-      "_type": "workspace"
-    },
-    {
       "_id": "req_d6313f0ad4a34578a850af75a97b3ce7",
       "parentId": "fld_bd7c8067c974432a89f266f741ecbc34",
-      "modified": 1651055934219,
+      "modified": 1651073567718,
       "created": 1651033661319,
       "url": "{{ _.baseUrl }}/users",
       "name": "Create",
@@ -69,7 +136,7 @@
       "method": "POST",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n\t\"name\": \"test\",\n\t\"email\": \"test1@gmail.com\",\n\t\"phone\": \"+55 (11) 9.5648-1235\"\n}"
+        "text": "{\n\t\"name\": \"test\",\n\t\"email\": \"test@gmail.com\",\n\t\"phone\": \"+55 (11) 9.5648-1235\"\n}"
       },
       "parameters": [],
       "headers": [
