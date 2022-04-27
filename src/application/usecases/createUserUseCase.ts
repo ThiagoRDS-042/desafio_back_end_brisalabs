@@ -3,7 +3,7 @@ import { AppError } from "../../error/appError";
 import { Message, StatusCode } from "../../responses";
 import { IUsersRepository } from "../repositories/IUsersRepository";
 
-export type CreateUserRequest = {
+type CreateUserRequest = {
   name: string;
   email: string;
   phone: string;

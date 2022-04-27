@@ -5,7 +5,7 @@ import { PixKeyProps } from "../../domain/entities/pixKey.model";
 import { AppError } from "../../error/appError";
 import { Message, StatusCode } from "../../responses";
 
-describe("Create pixKey use case", () => {
+describe("Create pix key use case", () => {
   it("should be able to create a new pix key", async () => {
     const usersRepository = new InMemoryUsersRepository();
     const createPixKeyUseCase = createPixKeyUseCaseFactory(usersRepository);
@@ -23,7 +23,7 @@ describe("Create pixKey use case", () => {
     expect(pixKey.id).not.toBeNull();
   });
 
-  it("should not be able to create a new pix key with existing pixKey", async () => {
+  it("should not be able to create a new pix key with a existing pixKey", async () => {
     const usersRepository = new InMemoryUsersRepository();
     const createPixKeyUseCase = createPixKeyUseCaseFactory(usersRepository);
 

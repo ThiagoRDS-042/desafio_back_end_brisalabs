@@ -4,7 +4,7 @@ import { Message, StatusCode } from "../../responses";
 import { IPixKeysRepository } from "../repositories/IPixKeysRepository";
 import { IUsersRepository } from "../repositories/IUsersRepository";
 
-export type CreatePixKeyRequest = {
+type CreatePixKeyRequest = {
   key: string;
   user_id: string;
 };

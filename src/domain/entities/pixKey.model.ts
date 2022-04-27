@@ -31,7 +31,7 @@ export class PixKey {
 
   @ManyToOne(() => User)
   @JoinColumn({ name: "user_id" })
-  user: string;
+  user: User;
 
   private constructor(pixKey: PixKeyProps) {
     Object.assign(this, pixKey);
