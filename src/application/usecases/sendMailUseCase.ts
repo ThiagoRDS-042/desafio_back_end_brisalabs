@@ -4,7 +4,7 @@ import SMTPTransport from "nodemailer/lib/smtp-transport";
 type SendMailRequest = {
   to: string;
   subject: string;
-  contentText: string;
+  content: string;
 };
 
 export class SendMailUseCase {
@@ -12,11 +12,11 @@ export class SendMailUseCase {
     private transporter: nodemailer.Transporter<SMTPTransport.SentMessageInfo>
   ) {}
 
-  async execute({ to, contentText, subject }: SendMailRequest) {
+  async execute({ to, content, subject }: SendMailRequest) {
     const mail = await this.transporter.sendMail({
       from: `${process.env.NODEMAILER_NAME}  <${process.env.NODEMAILER_USER}>`,
       subject: subject,
-      text: contentText,
+      html: content,
       to: to,
       date: new Date(),
     });

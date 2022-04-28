@@ -32,12 +32,12 @@ describe("Send mail use case", () => {
     const [mailReceive, MailSend] = await Promise.all([
       sendMailUseCase.execute({
         subject: "Transação Concluída",
-        contentText: `${user_to.name} você acaba de receber R$ ${transaction.amount}, vindo de ${user_from.name}  <${user_from.email}> | ${date}`,
+        content: `${user_to.name} você acaba de receber R$ ${transaction.amount}, vindo de ${user_from.name}  <${user_from.email}> | ${date}`,
         to: user_to.email,
       }),
       sendMailUseCase.execute({
         subject: "Transação Concluída",
-        contentText: `${user_from.name} você acaba de enviar R$ ${transaction.amount} para ${user_to.name}  <${user_to.email}>  | ${date}`,
+        content: `${user_from.name} você acaba de enviar R$ ${transaction.amount} para ${user_to.name}  <${user_to.email}>  | ${date}`,
         to: user_to.email,
       }),
     ]);

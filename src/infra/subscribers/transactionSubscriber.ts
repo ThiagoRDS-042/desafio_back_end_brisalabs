@@ -41,12 +41,12 @@ export class TransactionSubscriber
     Promise.all([
       sendMailUseCase.execute({
         subject: "Transação Concluída",
-        contentText: `${pixKey_user_to.user.name} você acaba de receber R$ ${transaction.amount}, vindo de ${pixKey_user_from.user.name}  <${pixKey_user_from.user.email}> | ${date}`,
+        content: `Olá, <strong>${pixKey_user_to.user.name}!</strong> você acaba de receber <strong>R$ ${transaction.amount},00</strong>, vindo de <strong>${pixKey_user_from.user.name}</strong>  <${pixKey_user_from.user.email}> | <strong>${date}</strong>`,
         to: pixKey_user_to.user.email,
       }),
       sendMailUseCase.execute({
         subject: "Transação Concluída",
-        contentText: `${pixKey_user_from.user.name} você acaba de enviar R$ ${transaction.amount} para ${pixKey_user_to.user.name}  <${pixKey_user_to.user.email}>  | ${date}`,
+        content: `Olá, <strong>${pixKey_user_from.user.name}!</strong> você acaba de enviar <strong>R$ ${transaction.amount},00</strong> para <strong>${pixKey_user_to.user.name}</strong>  <${pixKey_user_to.user.email}>  | </strong>${date}<strong>`,
         to: pixKey_user_from.user.email,
       }),
     ]);
