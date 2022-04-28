@@ -35,7 +35,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
   - Manipule suas variáveis de ambiente para o uso, ex: `.env`.
   - No mesmo terminal digite `npm run typeorm migration:run` para criar as tabelas do bando de dados.
   - Ainda no mesmo terminal agora digite `npm run dev` para iniciar a aplicação.
-    Por fim, a aplicação estará disponível em `http://localhost:${SERVER_PORT}`.
+  - Por fim, a aplicação estará disponível em `http://localhost:${SERVER_PORT}`.
 
 - Rodando os testes:
 
@@ -45,9 +45,10 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Utilizando docker
 
   - **docker**
-    - Abra o terminal e digite `make up` ou `docker-compose up -d` para criar e iniciar os containers.
-    - Abra o terminal e digite `make dow` ou `docker-compose down` para parar e remover os containers.
-    - Abra o terminal e digite `make logs` ou `docker-compose logs -f` para ter visualizar os logs.
+    - Abra o terminal e digite `sudo chmod -R 777 .docker` para impedir erros de permissões para a pasta .docker.
+    - Digite `make up` ou `docker-compose up -d` para criar e iniciar os containers.
+    - Digite `make dow` ou `docker-compose down` para parar e remover os containers.
+    - Digite `make logs` ou `docker-compose logs -f` para ter visualizar os logs.
     - Para rodar os testes, selecione o container `docker-compose exec <container-name> bash` ou `docker exec -it <container-name> bash`, depois digite `npm test` ou `npm run test:watch`.
 
 ### Autor
