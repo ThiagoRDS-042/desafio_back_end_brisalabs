@@ -2,12 +2,15 @@ import { createTransactionFakeFactory } from "../../../tests/factories/createTra
 import { findTransactionsByUserIdUseCaseFactory } from "../../../tests/factories/findTransactionsByUserIdUseCase";
 import { InMemoryPixKeysRepository } from "../../../tests/repositories/inMemoryPixKeysRepository";
 import { InMemoryTransactionsRepository } from "../../../tests/repositories/inMemoryTransactionsRepository";
+import { InMemoryUsersRepository } from "../../../tests/repositories/inMemoryUsersRepository";
 import { AppError } from "../../error/appError";
 import { Message, StatusCode } from "../../responses";
 
 describe("Find transactions by user id use case", () => {
   it("should be able to find transactions by user id", async () => {
-    const pixKeysRepository = new InMemoryPixKeysRepository();
+    const pixKeysRepository = new InMemoryPixKeysRepository(
+      new InMemoryUsersRepository()
+    );
     const transactionRepository = new InMemoryTransactionsRepository(
       pixKeysRepository
     );
@@ -28,7 +31,9 @@ describe("Find transactions by user id use case", () => {
   });
 
   it("should not be able to find transactions by empty user id", async () => {
-    const pixKeysRepository = new InMemoryPixKeysRepository();
+    const pixKeysRepository = new InMemoryPixKeysRepository(
+      new InMemoryUsersRepository()
+    );
     const transactionRepository = new InMemoryTransactionsRepository(
       pixKeysRepository
     );

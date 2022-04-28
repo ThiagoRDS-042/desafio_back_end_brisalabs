@@ -44,5 +44,5 @@ export const createTransactionFakeFactory = (
   });
   transactionRepository.transactions.push(transaction);
 
-  return { transaction, user_from };
+  return { transaction, user_from, user_to };
 };

@@ -24,11 +24,11 @@ export class CreateTransactionsTable1651072835351
           },
           {
             name: "pixKey_key_from",
-            type: "varchar(20)",
+            type: "varchar(100)",
           },
           {
             name: "pixKey_key_to",
-            type: "varchar(20)",
+            type: "varchar(100)",
           },
         ],
       })

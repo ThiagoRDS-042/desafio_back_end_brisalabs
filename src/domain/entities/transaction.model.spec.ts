@@ -1,13 +1,17 @@
 import { createPixKeysFakeFactory } from "../../../tests/factories/createPixKeysFake";
 import { InMemoryPixKeysRepository } from "../../../tests/repositories/inMemoryPixKeysRepository";
+import { InMemoryUsersRepository } from "../../../tests/repositories/inMemoryUsersRepository";
 import { AppError } from "../../error/appError";
 import { Message, StatusCode } from "../../responses";
 import { Transaction, TransactionProps } from "./transaction.model";
 
 describe("Create transaction", () => {
   it("should be able to create a new transaction", () => {
+    const usersRepository = new InMemoryUsersRepository();
+    const pixKeysRepository = new InMemoryPixKeysRepository(usersRepository);
     const { pixKey_key_from, pixKey_key_to } = createPixKeysFakeFactory(
-      new InMemoryPixKeysRepository()
+      pixKeysRepository,
+      usersRepository
     );
 
     const transactionData: TransactionProps = {
@@ -23,8 +27,11 @@ describe("Create transaction", () => {
   });
 
   it("should not be able to create a new transaction with a negative amount", () => {
+    const usersRepository = new InMemoryUsersRepository();
+    const pixKeysRepository = new InMemoryPixKeysRepository(usersRepository);
     const { pixKey_key_from, pixKey_key_to } = createPixKeysFakeFactory(
-      new InMemoryPixKeysRepository()
+      pixKeysRepository,
+      usersRepository
     );
 
     const transactionData: TransactionProps = {

@@ -9,6 +9,19 @@ export class PixKeysRepository implements IPixKeysRepository {
     this.pixKeyRepo = getRepository(PixKey);
   }
 
+  async findByKey(key: string): Promise<PixKey | null> {
+    const pixKey = await this.pixKeyRepo.find({
+      where: { key },
+      relations: ["user"],
+    });
+
+    if (pixKey.length === 0) {
+      return null;
+    }
+
+    return pixKey[0];
+  }
+
   async pixKeyAlreadyExists(key: string): Promise<boolean> {
     const pixKey = await this.pixKeyRepo.findOne({
       where: { key },

@@ -4,10 +4,9 @@ import { InMemoryPixKeysRepository } from "../repositories/inMemoryPixKeysReposi
 import { InMemoryUsersRepository } from "../repositories/inMemoryUsersRepository";
 
 export const createPixKeysFakeFactory = (
-  pixKeysRepository: InMemoryPixKeysRepository
+  pixKeysRepository: InMemoryPixKeysRepository,
+  usersRepository: InMemoryUsersRepository
 ) => {
-  const usersRepository = new InMemoryUsersRepository();
-
   const user_from = User.create({
     name: "user-fake-one",
     email: "userFakeOne@example.com",

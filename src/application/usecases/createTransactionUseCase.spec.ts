@@ -1,18 +1,22 @@
 import { createPixKeysFakeFactory } from "../../../tests/factories/createPixKeysFake";
 import { createTransactionUseCaseFactory } from "../../../tests/factories/createTransactionUseCase";
 import { InMemoryPixKeysRepository } from "../../../tests/repositories/inMemoryPixKeysRepository";
+import { InMemoryUsersRepository } from "../../../tests/repositories/inMemoryUsersRepository";
 import { TransactionProps } from "../../domain/entities/transaction.model";
 import { AppError } from "../../error/appError";
 import { Message, StatusCode } from "../../responses";
 
 describe("Create transaction use case", () => {
   it("should be able to create a new transaction", async () => {
-    const pixKeysRepository = new InMemoryPixKeysRepository();
-    const createTransactionUseCase =
-      createTransactionUseCaseFactory(pixKeysRepository);
-
-    const { pixKey_key_from, pixKey_key_to } =
-      createPixKeysFakeFactory(pixKeysRepository);
+    const usersRepository = new InMemoryUsersRepository();
+    const pixKeysRepository = new InMemoryPixKeysRepository(usersRepository);
+    const createTransactionUseCase = await createTransactionUseCaseFactory(
+      pixKeysRepository
+    );
+    const { pixKey_key_from, pixKey_key_to } = createPixKeysFakeFactory(
+      pixKeysRepository,
+      usersRepository
+    );
 
     const transactionData: TransactionProps = {
       amount: 10,
@@ -27,11 +31,15 @@ describe("Create transaction use case", () => {
   });
 
   it("should not be able to create a new transaction with a empty pixKey_key_from", async () => {
-    const pixKeysRepository = new InMemoryPixKeysRepository();
-    const createTransactionUseCase =
-      createTransactionUseCaseFactory(pixKeysRepository);
-
-    const { pixKey_key_to } = createPixKeysFakeFactory(pixKeysRepository);
+    const usersRepository = new InMemoryUsersRepository();
+    const pixKeysRepository = new InMemoryPixKeysRepository(usersRepository);
+    const createTransactionUseCase = await createTransactionUseCaseFactory(
+      pixKeysRepository
+    );
+    const { pixKey_key_to } = createPixKeysFakeFactory(
+      pixKeysRepository,
+      usersRepository
+    );
 
     const transactionData: TransactionProps = {
       amount: 10,
@@ -47,11 +55,15 @@ describe("Create transaction use case", () => {
   });
 
   it("should not be able to create a new transaction with a empty pixKey_key_to", async () => {
-    const pixKeysRepository = new InMemoryPixKeysRepository();
-    const createTransactionUseCase =
-      createTransactionUseCaseFactory(pixKeysRepository);
-
-    const { pixKey_key_from } = createPixKeysFakeFactory(pixKeysRepository);
+    const usersRepository = new InMemoryUsersRepository();
+    const pixKeysRepository = new InMemoryPixKeysRepository(usersRepository);
+    const createTransactionUseCase = await createTransactionUseCaseFactory(
+      pixKeysRepository
+    );
+    const { pixKey_key_from } = createPixKeysFakeFactory(
+      pixKeysRepository,
+      usersRepository
+    );
 
     const transactionData: TransactionProps = {
       amount: 10,
