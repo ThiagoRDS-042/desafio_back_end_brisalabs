@@ -47,7 +47,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
   - **docker**
     - Abra o terminal e digite `sudo chmod -R 777 .docker` para impedir erros de permissões para a pasta .docker.
     - Digite `make up` ou `docker-compose up -d` para criar e iniciar os containers.
-    - Digite `make dow` ou `docker-compose down` para parar e remover os containers.
+    - Digite `make down` ou `docker-compose down` para parar e remover os containers.
     - Digite `make logs` ou `docker-compose logs -f` para ter visualizar os logs.
     - Para rodar os testes, selecione o container `docker-compose exec <container-name> bash` ou `docker exec -it <container-name> bash`, depois digite `npm test` ou `npm run test:watch`.
 
