@@ -1,7 +1,8 @@
-import { getRepository, Repository } from "typeorm";
+import { EntityRepository, getRepository, Repository } from "typeorm";
 import { IPixKeysRepository } from "../../application/repositories/IPixKeysRepository";
 import { PixKey, PixKeyProps } from "../../domain/entities/pixKey.model";
 
+@EntityRepository(PixKey)
 export class PixKeysRepository implements IPixKeysRepository {
   private pixKeyRepo: Repository<PixKey>;
 
