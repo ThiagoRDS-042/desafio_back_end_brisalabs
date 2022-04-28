@@ -1,7 +1,8 @@
-import { getRepository, Repository } from "typeorm";
+import { EntityRepository, getRepository, Repository } from "typeorm";
 import { ITransactionsRepository } from "../../application/repositories/ITransactionsRepository";
 import { Transaction } from "../../domain/entities/transaction.model";
 
+@EntityRepository(Transaction)
 export class TransactionsRepository implements ITransactionsRepository {
   private transactionRepo: Repository<Transaction>;
 
