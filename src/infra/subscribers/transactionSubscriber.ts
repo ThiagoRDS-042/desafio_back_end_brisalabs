@@ -5,7 +5,7 @@ import {
   EventSubscriber,
   InsertEvent,
 } from "typeorm";
-import { createTransportSendMailFactory } from "../../application/factories/createTransportSendMail";
+import { createTransporterSendMailFactory } from "../../application/factories/createTransporterSendMail";
 import { SendMailUseCase } from "../../application/usecases/sendMailUseCase";
 import { Transaction } from "../../domain/entities/transaction.model";
 import { PixKeysRepository } from "../repositories/pixKeysRepository";
@@ -31,7 +31,7 @@ export class TransactionSubscriber
     );
 
     const sendMailUseCase = new SendMailUseCase(
-      createTransportSendMailFactory()
+      createTransporterSendMailFactory()
     );
 
     const date = format(new Date(), "dd MMM yyyy", {

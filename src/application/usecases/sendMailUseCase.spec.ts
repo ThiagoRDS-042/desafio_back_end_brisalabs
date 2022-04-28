@@ -2,7 +2,7 @@ import { format } from "date-fns";
 import ptBR from "date-fns/locale/pt-BR";
 import nodemailer from "nodemailer";
 import { createTransactionFakeFactory } from "../../../tests/factories/createTransactionFake";
-import { createTransportSendMailFakeFactory } from "../../../tests/factories/createTransportSendMailFake";
+import { createTransporterSendMailFakeFactory } from "../../../tests/factories/createTransporterSendMailFake";
 import { InMemoryPixKeysRepository } from "../../../tests/repositories/inMemoryPixKeysRepository";
 import { InMemoryTransactionsRepository } from "../../../tests/repositories/inMemoryTransactionsRepository";
 import { InMemoryUsersRepository } from "../../../tests/repositories/inMemoryUsersRepository";
@@ -25,7 +25,7 @@ describe("Send mail use case", () => {
       locale: ptBR,
     });
 
-    const transporter = await createTransportSendMailFakeFactory();
+    const transporter = await createTransporterSendMailFakeFactory();
 
     const sendMailUseCase = new SendMailUseCase(transporter);
 
