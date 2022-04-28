@@ -30,12 +30,12 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Executando a aplicação:
 
   - **aplicação**
-  - Abra o terminal e digite `npm install` para instalar todas as dependências do projeto.
-  - Crie um bando de dados no postgresql.
-  - Manipule suas variáveis de ambiente para o uso, ex: `.env`.
-  - No mesmo terminal digite `npm run typeorm migration:run` para criar as tabelas do bando de dados.
-  - Ainda no mesmo terminal agora digite `npm run dev` para iniciar a aplicação.
-  - Por fim, a aplicação estará disponível em `http://localhost:${SERVER_PORT}`.
+    - Abra o terminal e digite `npm install` para instalar todas as dependências do projeto.
+    - Crie um bando de dados no postgresql.
+    - Manipule suas variáveis de ambiente para o uso, ex: `.env`.
+    - No mesmo terminal digite `npm run typeorm migration:run` para criar as tabelas do bando de dados.
+    - Ainda no mesmo terminal agora digite `npm run dev` para iniciar a aplicação.
+    - Por fim, a aplicação estará disponível em `http://localhost:${SERVER_PORT}`.
 
 - Rodando os testes:
 
