@@ -4,7 +4,7 @@ export default {
   // Automatically clear mock calls, instances, contexts and results before every test
   clearMocks: true,
   // Indicates whether the coverage information should be collected while executing the test
-  collectCoverage: true,
+  collectCoverage: false,
   // Indicates which provider should be used to instrument code for coverage
   coverageProvider: "v8",
   // The test environment that will be used for testing
