@@ -22,9 +22,10 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
   - **nodemailer**
     - Entre em sua conta do gmail.
+    - Vá em 'gerenciar sua conta do google'.
     - Vá em 'segurança'.
     - Ative a 'verificação em duas etapas do gmail' em sua conta.
-    - Crie uma 'Senhas de app' para a aplicação, e copie a senha criada.
+    - Ainda em segurança vá em 'Senhas de app', selecione outros, dê um nome a variável, gere e copie a senha criada.
     - Utilize seu email e a senha criada nas variáveis de ambiente(arquivo .env) do nodemailer da aplicação.
 
 - Executando a aplicação:
